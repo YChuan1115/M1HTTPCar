@@ -1,3 +1,9 @@
+/**********************************************
+ * NanoPi M1 GPIO Package
+ * author: bluebanboom
+ * email:  bluebanboom@gmail.com
+ * 2016.07
+ **********************************************/
 package gpio
 
 import (

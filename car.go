@@ -1,3 +1,10 @@
+/**********************************************
+ * NanoPi M1 HTTP Car
+ * author: bluebanboom
+ * email:  bluebanboom@gmail.com
+ * 2016.07.21
+ * https://github.com/bluebanboom/M1HttpCar
+ **********************************************/
 package main
 
 import (
