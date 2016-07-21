@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Car</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <!-- 引入 Bootstrap -->
+      <link href="/css/pure-min.css" rel="stylesheet">
+      <style>
+      .button {
+        border-radius: 8px;
+        border: 1px solid #3CC51F;
+        position: relative;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        padding-left: 14px;
+        padding-right: 14px;
+        box-sizing: border-box;
+        font-size: 18px;
+        text-align: center;
+        text-decoration: none;
+        color: #3CC51F;
+        line-height: 2.33333333;
+        border-radius: 5px;
+        -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+        overflow: hidden;
+      }
+      .button:after {
+        content: " ";
+        width: 200%;
+        height: 200%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        border: 1px solid rgba(0, 0, 0, 0.2);
+        -webkit-transform: scale(0.5);
+                transform: scale(0.5);
+        -webkit-transform-origin: 0 0;
+                transform-origin: 0 0;
+        box-sizing: border-box;
+        border-radius: 10px;
+      }
+      </style>
+</head>
+<body>
+    <center><h1 style="color:#3CC51F;">小车遥控</h1></center>
+    <center><h3 id="status" style="color:#3CC51F;">状态：等待</h3></center>
+    <center>
+    <div class="pure-g" style="height:44px;margin:20px;">
+        <a href="javascript:;" class="pure-u-2-5 button" onclick="doAction('on')">开</a>
+        <a href="javascript:;" class="pure-u-2-5 button" onclick="doAction('off')">关</a>
+    </div>
+    <div class="pure-g">
+        <div class="pure-u-2-24" style="">
+        </div>
+        <div class="pure-u-20-24" style="height:270px;">
+            <div class="pure-g" style="height:90px">
+                <div class="pure-u-8-24">
+                </div>
+                <div class="pure-u-8-24">
+                    <div style="margin-top:10px;">
+                        <a href="javascript:;" onclick="doAction('forward');">
+                            <svg width="55px" height="79px" viewBox="213 97 55 79" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                                <!-- Generator: Sketch 39 (31667) - http://www.bohemiancoding.com/sketch -->
+                                <desc>Created with Sketch.</desc>
+                                <defs></defs>
+                                <g id="Group" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" transform="translate(215.000000, 100.000000)">
+                                    <polyline id="Path-2" stroke="#666" stroke-width="4" points="0.163085938 29.9560547 25.2763672 0.73046875 50.5761719 30.0029297"></polyline>
+                                    <path d="M25,1.29589844 L25,73" id="Path-3" stroke="#666" stroke-width="4"></path>
+                                </g>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+                <div class="pure-u-8-24">
+                </div>
+            </div>
+            <div class="pure-g" style="height:90px">
+                <div class="pure-u-1-2">
+                    <div style="margin:22px;">
+                        <a href="javascript:;" onclick="doAction('left');">
+                            <svg width="80px" height="56px" viewBox="200 109 80 56" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                                <!-- Generator: Sketch 39 (31667) - http://www.bohemiancoding.com/sketch -->
+                                <desc>Created with Sketch.</desc>
+                                <defs></defs>
+                                <g id="Group" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" transform="translate(240.500000, 137.000000) rotate(270.000000) translate(-240.500000, -137.000000) translate(215.000000, 100.000000)">
+                                    <polyline id="Path-2" stroke="#666666" stroke-width="4" points="0.163085938 29.9560547 25.2763672 0.73046875 50.5761719 30.0029297"></polyline>
+                                    <path d="M25,1.29589844 L25,73" id="Path-3" stroke="#666666" stroke-width="4"></path>
+                                </g>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+                <div class="pure-u-1-2">
+                    <div style="margin:22px;">
+                        <a href="javascript:;" onclick="doAction('right');">
+                            <svg width="80px" height="56px" viewBox="201 109 80 56" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                                <!-- Generator: Sketch 39 (31667) - http://www.bohemiancoding.com/sketch -->
+                                <desc>Created with Sketch.</desc>
+                                <defs></defs>
+                                <g id="Group" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" transform="translate(240.500000, 137.000000) rotate(90.000000) translate(-240.500000, -137.000000) translate(215.000000, 100.000000)">
+                                    <polyline id="Path-2" stroke="#666" stroke-width="4" points="0.163085938 29.9560547 25.2763672 0.73046875 50.5761719 30.0029297"></polyline>
+                                    <path d="M25,1.29589844 L25,73" id="Path-3" stroke="#666" stroke-width="4"></path>
+                                </g>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="pure-g" style="height:90px">
+                <div class="pure-u-8-24">
+                </div>
+                <div class="pure-u-8-24">
+                    <div style="margin-top:10px;">
+                        <a href="javascript:;" onclick="doAction('backward');">
+                            <svg width="55px" height="79px" viewBox="213 98 55 79" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                                <!-- Generator: Sketch 39 (31667) - http://www.bohemiancoding.com/sketch -->
+                                <desc>Created with Sketch.</desc>
+                                <defs></defs>
+                                <g id="Group" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" transform="translate(240.500000, 137.000000) rotate(180.000000) translate(-240.500000, -137.000000) translate(215.000000, 100.000000)">
+                                    <polyline id="Path-2" stroke="#666" stroke-width="4" points="0.163085938 29.9560547 25.2763672 0.73046875 50.5761719 30.0029297"></polyline>
+                                    <path d="M25,1.29589844 L25,73" id="Path-3" stroke="#666" stroke-width="4"></path>
+                                </g>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+                <div class="pure-u-8-24">
+                </div>
+            </div>
+        </div>
+        <div class="pure-u-2-24" style="">
+        </div>
+    </div>
+    <div class="pure-g" style="height:44px;margin:20px;">
+        <a href="javascript:;" class="pure-u-3-5 button" onclick="doAction('stop')">停</a>
+    </div>
+</center>
+    <!-- jQuery (Bootstrap 的 JavaScript 插件需要引入 jQuery) -->
+    <script src="/js/jquery-3.1.0.min.js"></script>
+    <script>
+    function doAction(action) {
+        console.log(action)
+        $.get("/action?" + action, {}, function(data, textStatus) {
+            console.log(data)
+            if (action == 'on') {
+                if (data['result'] == 1) {
+                    $("#status")[0].innerText = "状态：开"
+                }
+                else {
+                    $("#status")[0].innerText = "状态：等待"
+                }
+            }
+            else if (action == 'off') {
+                if (data['result'] == 1) {
+                    $("#status")[0].innerText = "状态：关"
+                }
+                else {
+                    $("#status")[0].innerText = "状态：等待"
+                }
+            }
+            else if (action == 'stop') {
+                if (data['result'] == 1) {
+                    $("#status")[0].innerText = "状态：停"
+                }
+                else {
+                    $("#status")[0].innerText = "状态：等待"
+                }
+            }
+            else if (action == 'forward') {
+                if (data['result'] == 1) {
+                    $("#status")[0].innerText = "状态：前"
+                }
+                else {
+                    $("#status")[0].innerText = "状态：等待"
+                }
+            }
+            else if (action == 'backward') {
+                if (data['result'] == 1) {
+                    $("#status")[0].innerText = "状态：后"
+                }
+                else {
+                    $("#status")[0].innerText = "状态：等待"
+                }
+            }
+            else if (action == 'left') {
+                if (data['result'] == 1) {
+                    $("#status")[0].innerText = "状态：左"
+                }
+                else {
+                    $("#status")[0].innerText = "状态：等待"
+                }
+            }
+            else if (action == 'right') {
+                if (data['result'] == 1) {
+                    $("#status")[0].innerText = "状态：右"
+                }
+                else {
+                    $("#status")[0].innerText = "状态：等待"
+                }
+            }
+        })
+    }
+    </script>
+</body>
+</html>
