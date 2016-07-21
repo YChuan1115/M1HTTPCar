@@ -92,9 +92,9 @@ func main() {
     if len(ip) == 0 {
         ip = "localhost"
     }
-    fmt.Println("------------------------------------")
-    fmt.Printf("Car is ready on %s:8000\n", ip)
-    fmt.Println("------------------------------------")
+    fmt.Println("-------------------------------------------")
+    fmt.Printf("Car is ready on http://%s:8000\n", ip)
+    fmt.Println("-------------------------------------------")
     gCar = NewCar()
 
     // static
