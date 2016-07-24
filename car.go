@@ -3,7 +3,7 @@
  * author: bluebanboom
  * email:  bluebanboom@gmail.com
  * 2016.07.21
- * https://github.com/bluebanboom/M1HttpCar
+ * https://github.com/bluebanboom/M1HTTPCar
  **********************************************/
 package main
 
