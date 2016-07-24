@@ -118,7 +118,7 @@ func (port *Port) DigitalWrite(pin int, value int) {
     }
 }
 
-func (port *Port) DigitalRead(pin int, value int) int {
+func (port *Port) DigitalRead(pin int) int {
     portn := PinToPort(pin)
     shift := PinToShift(pin)
     if portn < 0 || shift < 0 {
@@ -126,7 +126,7 @@ func (port *Port) DigitalRead(pin int, value int) int {
     }
 
     data := int(port.Pn_DAT)
-    return (data & (^(1 << uint32(shift)))) >> uint32(shift)
+    return (data & (1 << uint32(shift))) >> uint32(shift)
 }
 
 func (gpio *GPIO) Setup() error {
@@ -181,9 +181,9 @@ func (gpio *GPIO) DigitalWrite(pin int, value int) {
     port.DigitalWrite(pin, value)
 }
 
-func (gpio *GPIO) DigitalRead(pin int, value int) int {
+func (gpio *GPIO) DigitalRead(pin int) int {
     port := gpio.portForPin(pin)
-    return port.DigitalRead(pin, value)
+    return port.DigitalRead(pin)
 }
 
 // func main() {
